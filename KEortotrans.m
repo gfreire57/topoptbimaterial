@@ -1,11 +1,12 @@
 %%%%%%%%%% ELEMENT STIFFNESS MATRIX of k-th laminate %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% VERS√ÉO 2, VERIFICADA.
 
-% theta_k = ‚ngulo entre a direÁ„o principal e a direÁ„o global. 
-%E1_rig e E2_rig s„o os valores de Young longitudinal e transversal do material rÌgido
-%os nuís s„o os valores de Poisson do material rÌgido
+% theta_k = √¢ngulo entre a dire√ß√£o principal e a dire√ß√£o global. 
+%E1_rig e E2_rig s√£o os valores de Young longitudinal e transversal do material r√≠gido
+%os nu‚Äôs s√£o os valores de Poisson do material r√≠gido
 function [KE]=KEortotransv2(E1, E2, nu_12, nu_21, G12, t, theta_k)
 a_ = 0.5; % a_ (temporariamente com underscore para diferenciar do 'a' usado no inicio a = E_1/E_2)
-b = 0.5; % a_ e b se referem ‡ metade do lado do elemento finito de lado de 1 unidade
+b = 0.5; % a_ e b se referem √† metade do lado do elemento finito de lado de 1 unidade
 
 % Matriz de rigidez reduzida Q
 Q(1,1) = E1/(1-nu_12*nu_21) ;
@@ -14,7 +15,7 @@ Q(2,1) = Q(1,2);
 Q(2,2) = E2/(1-nu_12*nu_21);
 Q(3,3) = G12;
 
-% Matriz de transformaÁ„o T
+% Matriz de transforma√ß√£o T
 theta_k = deg2rad(theta_k);
 c = cos(theta_k);
 s = sin(theta_k);
